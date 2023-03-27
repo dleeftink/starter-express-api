@@ -2,6 +2,8 @@ const express = require("express");
 const app = express();
 
 app.all("/*", async (req, res) => {
+   
+  console.log(req.url)
     
   const url = req.url.split('app/')[1] || "http://ipwho.is"
   
