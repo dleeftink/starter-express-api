@@ -3,9 +3,7 @@ const app = express();
 
 app.all("/*", async (req, res) => {
    
-  console.log(req.url)
-    
-  const url = req.url.split('app/')[1] || "http://ipwho.is"
+  const url = req.url.split('xx')[1] || "http://ipwho.is"
   
   const data = await fetch(url).then((d) => d.json());
   const headers = {
