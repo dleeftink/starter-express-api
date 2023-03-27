@@ -1,9 +1,11 @@
 const express = require("express");
 const app = express();
 
-app.all("/", async (req, res) => {
+app.all("/*", async (req, res) => {
     
-  const data = await fetch("http://ipwho.is").then((d) => d.json());
+  const url = req.url.split('app/')[1] || "http://ipwho.is"
+  
+  const data = await fetch(url).then((d) => d.json());
   const headers = {
     "Access-Control-Allow-Origin": req.headers.origin || "*",
     "Access-Control-Allow-Methods": "OPTIONS, POST, GET",
