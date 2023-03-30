@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 
+/*
 app.all("/*", async (req, res) => {
    
   const url = req.url.split('xx')[1] || "http://ipwho.is"
@@ -20,7 +21,8 @@ app.all("/*", async (req, res) => {
   // res.end(JSON.stringify({ time: Date.now(), context:{answer:true } }));
   // res.send({...data})
     
-});
+});*/
+
 
 app.get("/", (req,res)=> {
 
@@ -30,6 +32,7 @@ app.get("/", (req,res)=> {
   console.log(req.query)
   console.error('this is an error')
   return res.send('ok')
+  
 })
 
 app.listen(process.env.PORT || 3000)
