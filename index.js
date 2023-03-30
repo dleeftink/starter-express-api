@@ -22,4 +22,14 @@ app.all("/*", async (req, res) => {
     
 });
 
+app.get("/", (req,res)=> {
+
+  console.log(req.headers['user-agent'])
+  console.log(req.url)
+  console.log(Date.now())
+  console.log(req.query)
+  console.error('this is an error')
+  return res.send('ok')
+})
+
 app.listen(process.env.PORT || 3000)
