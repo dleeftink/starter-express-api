@@ -5,6 +5,8 @@ app.all("/*", async (req, res) => {
    
   const url = req.url.split('xx')[1] || "http://ipwho.is"
   
+  console.log(req.url)
+
   const data = await fetch(url).then((d) => d.json());
   const headers = {
     "Access-Control-Allow-Origin": req.headers.origin || "*",
